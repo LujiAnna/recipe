@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'recipe-app',
   // templateUrl: './recipe.app.component.html',
   // styleUrls: ['./app.component.css']
-  template: `<h1>Hello Recipe!</h1>
-  <img src="../assets/images/color_logo.png"/>
-  `
+  template: `<recipes-list></recipes-list>`
 })
 export class RecipeAppComponent {
   title = 'recipe';

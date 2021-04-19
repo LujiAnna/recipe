@@ -8,13 +8,21 @@ import { Component, Input } from '@angular/core';
   selector: 'recipe-thumbnail',
   template: `
         <mat-card class='pad'>
-            <mat-card-title>{{recipe.name}}</mat-card-title>
-            <mat-card-content class='ital'>Size: {{recipe.size.small}} </mat-card-content>
-            <button mat-raised-button> Details <mat-icon>open_in_new</mat-icon></button>
+            <mat-card-title>{{recipe?.name}}</mat-card-title>
+            <img mat-card-image [src] = 'recipe.imageUrl'  />
+            <mat-card-content class='ital'>
+            <p>Main Dish size: {{recipe?.size.medium}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+            <button [routerLink]="['/recipes', recipe.id]" mat-raised-button click='recipe.doSth()'> Cooking instructions</button>
+            </mat-card-actions>
         </mat-card>
+
   `,
-  styles: [`.pad {margin: 40px;}
+  styles: [`
+  .pad {margin: 40px;   max-width: 400px;}
   .ital {font-style: italic;}
+  img {width: 200px; height: 200px}
   `]
 
   })

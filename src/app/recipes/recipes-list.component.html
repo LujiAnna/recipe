@@ -2,6 +2,7 @@
     <div>
         <h1>Recipes</h1>
         <mat-divider></mat-divider>
-        <recipe-thumbnail [recipe]='recipe1'></recipe-thumbnail>
+        <!-- <recipe-thumbnail [recipe]='recipe1'></recipe-thumbnail> -->
+        <recipe-thumbnail *ngFor='let recipe of recipes' [recipe]='recipe'></recipe-thumbnail>
     </div>
 </section>
